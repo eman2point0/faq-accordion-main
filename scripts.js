@@ -4,8 +4,9 @@ const container = document.querySelectorAll(
   ".faq-question input[type='image']"
 );
 
+/*Iterate through all input elements*/
 for (let i = 0; i < container.length; i++) {
-  console.log(container[i]);
+  /*Add an event that will toggle if answer is visible or not */
   container[i].addEventListener("click", function () {
     this.classList.toggle("active");
 
