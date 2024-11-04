@@ -1,6 +1,6 @@
 # Frontend Mentor - FAQ accordion solution
 
-This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -35,7 +35,7 @@ Users should be able to:
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
@@ -43,8 +43,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/eman2point0/faq-accordion-main)
+- Live Site URL: [Add live site URL here](https://eman2point0.github.io/faq-accordion-main/)
 
 ## My process
 
@@ -55,9 +55,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- JavaScript
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
@@ -68,17 +66,55 @@ Use this section to recap over some of your major learnings while working throug
 To see how you can add code snippets, see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<input
+  type="image"
+  src="./assets/images/icon-plus.svg"
+  alt="Plus Icon to expand FAQ answer"
+/>
+
+This is how I converted an image into an interactable button that also switches
+images based on the display state.
 ```
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+hr {
+        border: 0;
+        display: block;
+        background-color: gray;
+        width: 100%;
+        height: 1px;
 }
+This was made to separate the questions with a solid line.
+
+@font-face {
+        font-family: myFirstFont;
+        src: url(./assets/fonts/static/WorkSans-Bold.ttf);
+}
+This allowed me to change the font style
 ```
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+/*Iterate through all input elements*/
+for (let i = 0; i < container.length; i++) {
+  /*Add an event that will toggle if answer is visible or not */
+  container[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+
+    /*Toggle between hiding and showing the active panel */
+    let dropDiv = this.parentElement.nextElementSibling;
+    dropDiv.style.display =
+      dropDiv.style.display === "block" ? "none" : "block";
+
+    /*Toggle beteen plus and minus images */
+    if (dropDiv.style.display === "none") {
+      this.setAttribute("src", "./assets/images/icon-plus.svg");
+    } else {
+      this.setAttribute("src", "./assets/images/icon-minus.svg");
+    }
+  });
 }
+
+This is how I would toggle the display states of the drop down elements. Interesting way to go about it.
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
@@ -89,20 +125,21 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
+A technique that I would like to learn more about are accordian menus, as they add a nice touch to a website and are good for UI.
+Another technique I want to get more into is using font-faces to change the style of my text.
+
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Example resource 1](https://www.w3schools.com/howto/howto_js_accordion.asp) - This helped me understand how an accordion menu interacts and the steps needed to create one.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Emanuel Barcenas](https://github.com/eman2point0/)
+- Frontend Mentor - [@eman2point0](https://www.frontendmentor.io/profile/eman2point0)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
