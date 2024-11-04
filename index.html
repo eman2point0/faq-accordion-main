@@ -28,6 +28,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
       }
 
       .attribution {
@@ -66,9 +67,18 @@
       .faq-question img:hover {
         cursor: pointer;
       }
+
       .faq-response {
         color: lightslategray;
+        font-size: 16px;
+        display: none;
+        overflow: hidden;
       }
+
+      /*.active,
+      .faq-question input[type="image"] {
+        background-color: #ccc;
+      }*/
     </style>
   </head>
   <body>
@@ -105,7 +115,9 @@
         with the free option providing access to a range of projects suitable
         for all skill levels.
       </p>
+
       <hr />
+
       <p class="faq-question">
         Can I use Frontend Mentor projects in my portfolio?
 
@@ -121,7 +133,9 @@
         portfolio. It's an excellent way to showcase your skills to potential
         employers!
       </p>
+
       <hr />
+
       <p class="faq-question">
         How can I get help if I'm stuck on a Frontend Mentor challenge?
         <input
@@ -144,5 +158,7 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Emanuel Barcenas</a>.
     </div>
+
+    <script src="./scripts.js"></script>
   </body>
 </html>
